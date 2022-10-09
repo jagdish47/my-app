@@ -1,24 +1,38 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Answer from './components/Answer';
+// import Hello from './components/Hello';
+// Component -> Function that returns JSX
+// JSX code HTML inside JS
 function App() {
+
+  let info = [
+    {name:"Jagdish", place:"Bihar"},
+    {name:"Anshu", place:"Rajasthan"},
+    {name:"Yuvraj", place:"Kamothe"},
+    {name:"Daya", place:"Mumbai"},
+    {name:"Naresh", place:"Bedi"},
+    {name:"Wadekar", place:"Aurangabad"}
+  ]
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+        {/* <Hello></Hello> */}
+        {/* <Answer name = "Jagdish" from = "India"/>
+        <Answer name = "Anshu" from = "India"/>
+        <Answer name = "Yuvraj" from = "India"/> */}
+        
+        {/* <Answer {...info[0]} />
+        <Answer {...info[1]} />
+        <Answer {...info[2]} />
+        <Answer {...info[3]} />
+        <Answer {...info[4]} />
+        <Answer {...info[5]} /> */}
+
+
+
+        {info.map((user) => (
+          <Answer {...user}/>
+        ))}
+    </div> 
   );
 }
 
