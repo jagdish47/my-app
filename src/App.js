@@ -6,7 +6,15 @@ import Answer from './components/Answer';
 function App() {
 
   let info = [
-    {name:"Jagdish", place:"Bihar"},
+    {
+      name: "Jagdish",
+       place: "Bihar",
+      
+       Infox : {
+        a : 1,
+        b : 2
+       },
+      },
     {name:"Anshu", place:"Rajasthan"},
     {name:"Yuvraj", place:"Kamothe"},
     {name:"Daya", place:"Mumbai"},
@@ -30,7 +38,17 @@ function App() {
 
 
         {info.map((user) => (
+
+          <div>
           <Answer {...user}/>
+
+            {/* <Answer name={info.name} place={info.place}/> */}
+            
+            {/* this is currect syntax but problem is when you add new */}
+            {/* property you can't add or pass that property thats why  */}
+            {/* we use ...user */}
+
+          </div>
         ))}
     </div> 
   );
